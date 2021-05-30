@@ -1,3 +1,4 @@
+import 'package:bwa_job/screens/sign_in/welcome_screen.dart';
 import 'package:bwa_job/theme.dart';
 import 'package:flutter/material.dart';
 
@@ -7,7 +8,7 @@ class SplashScreen extends StatelessWidget {
     return GestureDetector(
       onTap: () {
         Navigator.push(
-            context, MaterialPageRoute(builder: (context) => Percobaan()));
+            context, MaterialPageRoute(builder: (context) => WelcomeScreen()));
       },
       child: Scaffold(
         backgroundColor: primaryColor,
@@ -30,12 +31,5 @@ class SplashScreen extends StatelessWidget {
         )),
       ),
     );
-  }
-}
-
-class Percobaan extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Container();
   }
 }
