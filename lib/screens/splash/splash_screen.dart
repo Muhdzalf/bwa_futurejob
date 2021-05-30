@@ -4,11 +4,14 @@ import 'package:flutter/material.dart';
 class SplashScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: primaryColor,
-      body: GestureDetector(
-        onTap: () {},
-        child: Center(
+    return GestureDetector(
+      onTap: () {
+        Navigator.push(
+            context, MaterialPageRoute(builder: (context) => Percobaan()));
+      },
+      child: Scaffold(
+        backgroundColor: primaryColor,
+        body: Center(
             child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -27,5 +30,12 @@ class SplashScreen extends StatelessWidget {
         )),
       ),
     );
+  }
+}
+
+class Percobaan extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Container();
   }
 }
