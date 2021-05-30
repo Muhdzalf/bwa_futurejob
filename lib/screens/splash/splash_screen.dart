@@ -1,3 +1,4 @@
+import 'package:bwa_job/screens/sign_in/welcome_screen.dart';
 import 'package:bwa_job/theme.dart';
 import 'package:flutter/material.dart';
 
@@ -7,7 +8,10 @@ class SplashScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: primaryColor,
       body: GestureDetector(
-        onTap: () {},
+        onTap: () {
+          Navigator.push(context,
+              MaterialPageRoute(builder: (context) => WelcomeScreen()));
+        },
         child: Center(
             child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
