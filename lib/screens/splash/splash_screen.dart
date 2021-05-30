@@ -6,23 +6,26 @@ class SplashScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: primaryColor,
-      body: Center(
-          child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Image.asset(
-            'assets/images/logo.png',
-            height: 76,
-          ),
-          SizedBox(
-            height: 50,
-          ),
-          Text(
-            'FUTUREJOB',
-            style: textLogoBold,
-          )
-        ],
-      )),
+      body: GestureDetector(
+        onTap: () {},
+        child: Center(
+            child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Image.asset(
+              'assets/images/logo.png',
+              height: 76,
+            ),
+            SizedBox(
+              height: 50,
+            ),
+            Text(
+              'FUTUREJOB',
+              style: textLogoBold,
+            )
+          ],
+        )),
+      ),
     );
   }
 }
