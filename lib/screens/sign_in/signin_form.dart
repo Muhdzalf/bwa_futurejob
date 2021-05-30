@@ -51,9 +51,12 @@ class SignInForm extends StatelessWidget {
                 child: PrimaryButton(),
               ),
               Center(
-                child: Text(
-                  'Create New Account',
-                  style: subtitleLight,
+                child: TextButton(
+                  onPressed: () {},
+                  child: Text(
+                    'Create New Account',
+                    style: subtitleLight,
+                  ),
                 ),
               )
             ],
