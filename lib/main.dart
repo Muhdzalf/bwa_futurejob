@@ -1,3 +1,4 @@
+import 'package:bwa_job/screens/splash/splash_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -10,6 +11,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Future Job',
       theme: ThemeData(fontFamily: 'Poppins'),
+      home: SplashScreen(),
     );
   }
 }
