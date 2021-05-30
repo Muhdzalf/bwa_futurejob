@@ -1,4 +1,5 @@
 import 'package:bwa_job/screens/sign_in/components/background.dart';
+import 'package:bwa_job/screens/sign_in/signin_form.dart';
 import 'package:bwa_job/theme.dart';
 import 'package:flutter/material.dart';
 
@@ -43,7 +44,12 @@ class WelcomeScreen extends StatelessWidget {
                       height: 16,
                     ),
                     ElevatedButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => SignInForm()));
+                      },
                       child: Text('Sign In'),
                       style: ElevatedButton.styleFrom(
                           primary: Colors.transparent,
