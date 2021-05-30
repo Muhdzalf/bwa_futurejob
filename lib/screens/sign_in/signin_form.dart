@@ -1,6 +1,7 @@
 import 'package:bwa_job/theme.dart';
 import 'package:flutter/material.dart';
 
+import 'components/primary_button.dart';
 import 'components/textfield_label.dart';
 
 class SignInForm extends StatelessWidget {
@@ -11,7 +12,7 @@ class SignInForm extends StatelessWidget {
         child: SingleChildScrollView(
           scrollDirection: Axis.vertical,
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               Padding(
                 padding: EdgeInsets.only(left: 30, top: 30),
@@ -44,6 +45,17 @@ class SignInForm extends StatelessWidget {
               TextFieldWithLabel(
                 label: 'Password',
               ),
+              Padding(
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 24, vertical: 20),
+                child: PrimaryButton(),
+              ),
+              Center(
+                child: Text(
+                  'Create New Account',
+                  style: subtitleLight,
+                ),
+              )
             ],
           ),
         ),
