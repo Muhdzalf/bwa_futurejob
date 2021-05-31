@@ -48,7 +48,9 @@ class SignInForm extends StatelessWidget {
               Padding(
                 padding:
                     const EdgeInsets.symmetric(horizontal: 24, vertical: 20),
-                child: PrimaryButton(),
+                child: PrimaryButton(
+                  title: 'Sign In',
+                ),
               ),
               Center(
                 child: TextButton(

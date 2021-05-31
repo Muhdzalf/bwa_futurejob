@@ -1,3 +1,4 @@
+import 'package:bwa_job/screens/sign_in/components/primary_button.dart';
 import 'package:bwa_job/screens/sign_in/components/textfield_label.dart';
 import 'package:bwa_job/theme.dart';
 import 'package:flutter/material.dart';
@@ -62,6 +63,27 @@ class RegisterForm extends StatelessWidget {
                     label: 'Your Goal',
                   ),
                 ],
+              ),
+              SizedBox(
+                height: 20,
+              ),
+              Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 24),
+                  child: PrimaryButton(
+                    title: 'Register',
+                  )),
+              SizedBox(
+                height: 20,
+              ),
+              TextButton(
+                onPressed: () {},
+                child: Text(
+                  'Back to Sign In',
+                  style: subtitleLight,
+                ),
+              ),
+              SizedBox(
+                height: 50,
               )
             ],
           ),
