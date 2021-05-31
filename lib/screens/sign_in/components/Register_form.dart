@@ -1,5 +1,6 @@
 import 'package:bwa_job/screens/sign_in/components/primary_button.dart';
 import 'package:bwa_job/screens/sign_in/components/textfield_label.dart';
+import 'package:bwa_job/screens/sign_in/signin_form.dart';
 import 'package:bwa_job/theme.dart';
 import 'package:flutter/material.dart';
 
@@ -76,7 +77,10 @@ class RegisterForm extends StatelessWidget {
                 height: 20,
               ),
               TextButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => SignInForm()));
+                },
                 child: Text(
                   'Back to Sign In',
                   style: subtitleLight,

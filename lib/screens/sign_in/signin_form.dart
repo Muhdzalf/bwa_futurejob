@@ -1,3 +1,4 @@
+import 'package:bwa_job/screens/sign_in/components/Register_form.dart';
 import 'package:bwa_job/theme.dart';
 import 'package:flutter/material.dart';
 
@@ -54,7 +55,12 @@ class SignInForm extends StatelessWidget {
               ),
               Center(
                 child: TextButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => RegisterForm()));
+                  },
                   child: Text(
                     'Create New Account',
                     style: subtitleLight,
