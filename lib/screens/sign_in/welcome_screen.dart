@@ -1,3 +1,4 @@
+import 'package:bwa_job/screens/sign_in/components/Register_form.dart';
 import 'package:bwa_job/screens/sign_in/components/background.dart';
 import 'package:bwa_job/screens/sign_in/signin_form.dart';
 import 'package:bwa_job/theme.dart';
@@ -30,7 +31,12 @@ class WelcomeScreen extends StatelessWidget {
                 child: Column(
                   children: [
                     ElevatedButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => RegisterForm()));
+                      },
                       child: Text(
                         'Get Started',
                         style: body.copyWith(color: primaryColor),
