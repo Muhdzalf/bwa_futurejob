@@ -1,3 +1,4 @@
+import 'package:bwa_job/screens/sign_in/components/Register_form.dart';
 import 'package:bwa_job/theme.dart';
 import 'package:flutter/material.dart';
 
@@ -48,7 +49,9 @@ class SignInForm extends StatelessWidget {
               Padding(
                 padding:
                     const EdgeInsets.symmetric(horizontal: 24, vertical: 20),
-                child: PrimaryButton(),
+                child: PrimaryButton(
+                  title: 'Sign In',
+                ),
               ),
               Center(
                 child: TextButton(
