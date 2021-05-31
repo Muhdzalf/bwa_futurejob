@@ -52,12 +52,7 @@ class SignInForm extends StatelessWidget {
               ),
               Center(
                 child: TextButton(
-                  onPressed: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => RegisterForm()));
-                  },
+                  onPressed: () {},
                   child: Text(
                     'Create New Account',
                     style: subtitleLight,
