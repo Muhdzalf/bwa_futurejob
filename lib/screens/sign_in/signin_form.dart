@@ -51,6 +51,7 @@ class SignInForm extends StatelessWidget {
                     const EdgeInsets.symmetric(horizontal: 24, vertical: 20),
                 child: PrimaryButton(
                   title: 'Sign In',
+                  function: () {},
                 ),
               ),
               Center(
