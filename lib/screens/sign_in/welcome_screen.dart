@@ -1,4 +1,4 @@
-import 'package:bwa_job/screens/sign_in/components/Register_form.dart';
+import 'package:bwa_job/screens/sign_in/Register_form.dart';
 import 'package:bwa_job/screens/sign_in/components/background.dart';
 import 'package:bwa_job/screens/sign_in/signin_form.dart';
 import 'package:bwa_job/theme.dart';
