@@ -72,6 +72,7 @@ class RegisterForm extends StatelessWidget {
                   padding: EdgeInsets.symmetric(horizontal: 24),
                   child: PrimaryButton(
                     title: 'Register',
+                    function: () {},
                   )),
               SizedBox(
                 height: 20,
