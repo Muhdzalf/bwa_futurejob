@@ -1,3 +1,4 @@
+import 'package:bwa_job/screens/home/home_screen.dart';
 import 'package:bwa_job/screens/sign_in/Register_form.dart';
 import 'package:bwa_job/theme.dart';
 import 'package:flutter/material.dart';
@@ -51,7 +52,10 @@ class SignInForm extends StatelessWidget {
                     const EdgeInsets.symmetric(horizontal: 24, vertical: 20),
                 child: PrimaryButton(
                   title: 'Sign In',
-                  function: () {},
+                  function: () {
+                    Navigator.pushReplacement(context,
+                        MaterialPageRoute(builder: (context) => HomeScreen()));
+                  },
                 ),
               ),
               Center(
