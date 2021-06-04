@@ -1,7 +1,6 @@
 import 'package:bwa_job/theme.dart';
 import 'package:flutter/material.dart';
 import 'components/category_list.dart';
-import 'components/companyjob_card.dart';
 import 'components/job_list.dart';
 
 class HomeScreen extends StatelessWidget {
