@@ -2,6 +2,7 @@ import 'package:bwa_job/theme.dart';
 import 'package:flutter/material.dart';
 import 'components/category_list.dart';
 import 'components/companyjob_card.dart';
+import 'components/job_list.dart';
 
 class HomeScreen extends StatelessWidget {
   @override
@@ -64,16 +65,7 @@ class HomeScreen extends StatelessWidget {
                     style: body.copyWith(fontSize: 16),
                   ),
                 ),
-                Column(
-                  children: [
-                    // Company Card
-                    CompanyJobCard(
-                      companyName: 'Google',
-                      job: 'Front-End Developer',
-                      imageUrl: 'assets/images/social_media/google.png',
-                    ),
-                  ],
-                )
+                JobList()
               ],
             )
           ],
