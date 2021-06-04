@@ -1,7 +1,7 @@
 import 'package:bwa_job/theme.dart';
 import 'package:flutter/material.dart';
-
-import 'components/category_card.dart';
+import 'components/category_list.dart';
+import 'components/job_list.dart';
 
 class HomeScreen extends StatelessWidget {
   @override
@@ -53,37 +53,18 @@ class HomeScreen extends StatelessWidget {
                   padding: const EdgeInsets.only(left: 24, bottom: 16),
                   child: Text(
                     'Hot Categories',
-                    style: body,
+                    style: body.copyWith(fontSize: 16),
                   ),
                 ),
-                SizedBox(
-                  height: 200,
-                  child: ListView(
-                    scrollDirection: Axis.horizontal,
-                    children: [
-                      CategoryCard(
-                        title: 'Website Developer',
-                        image: 'assets/images/background/website.png',
-                      ),
-                      CategoryCard(
-                        title: 'Mobile Developer',
-                        image: 'assets/images/background/mobile.png',
-                      ),
-                      CategoryCard(
-                        title: 'Product Designer',
-                        image: 'assets/images/background/designer.png',
-                      ),
-                      CategoryCard(
-                        title: 'Video\nEditor',
-                        image: 'assets/images/background/video.png',
-                      ),
-                      CategoryCard(
-                        title: 'Content Writer',
-                        image: 'assets/images/background/writer.png',
-                      ),
-                    ],
+                CategoryList(),
+                Padding(
+                  padding: EdgeInsets.only(left: 24, top: 25),
+                  child: Text(
+                    'Just Posted',
+                    style: body.copyWith(fontSize: 16),
                   ),
-                )
+                ),
+                JobList()
               ],
             )
           ],
