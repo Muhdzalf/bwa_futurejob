@@ -1,3 +1,5 @@
+import 'package:bwa_job/screens/home/components/category_list.dart';
+import 'package:bwa_job/screens/home/components/job_list.dart';
 import 'package:flutter/material.dart';
 
 import '../../../theme.dart';
@@ -47,7 +49,34 @@ class DetailScreen extends StatelessWidget {
               ),
             ),
           ),
-          Expanded(flex: 3, child: Container())
+          Expanded(
+              flex: 3,
+              child: SingleChildScrollView(
+                scrollDirection: Axis.vertical,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Padding(
+                      padding:
+                          const EdgeInsets.only(left: 24, bottom: 16, top: 30),
+                      child: Text(
+                        'Big Company',
+                        style: body.copyWith(fontSize: 16),
+                      ),
+                    ),
+                    JobList(),
+                    Padding(
+                      padding:
+                          const EdgeInsets.only(left: 24, bottom: 16, top: 30),
+                      child: Text(
+                        'New Startups',
+                        style: body.copyWith(fontSize: 16),
+                      ),
+                    ),
+                    JobList(),
+                  ],
+                ),
+              ))
         ],
       ),
     );
