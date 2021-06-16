@@ -1,4 +1,4 @@
-import 'package:bwa_job/screens/home/details/details_screen.dart';
+import 'package:bwa_job/screens/home/categories/categories._screen.dart';
 import 'package:flutter/material.dart';
 
 import '../../../theme.dart';
@@ -22,7 +22,7 @@ class CategoryCard extends StatelessWidget {
         child: InkWell(
           onTap: () {
             Navigator.push(context,
-                MaterialPageRoute(builder: (context) => DetailScreen()));
+                MaterialPageRoute(builder: (context) => CategoriesScreen()));
           },
           child: Container(
             width: 150,
