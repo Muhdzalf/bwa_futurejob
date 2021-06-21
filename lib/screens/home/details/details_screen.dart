@@ -119,15 +119,21 @@ class DetailScreen extends StatelessWidget {
                 ],
               ),
             ),
-            SizedBox(
-              height: 30,
-            ),
-            ElevatedButton(
-              onPressed: () {},
-              child: Text('Apply Job'),
-              style: ElevatedButton.styleFrom(
-                  padding: EdgeInsets.symmetric(vertical: 11)),
-            )
+            Padding(
+                padding:
+                    const EdgeInsets.symmetric(vertical: 30, horizontal: 80),
+                child: ElevatedButton(
+                  onPressed: () {},
+                  child: Text(
+                    'Apply Job',
+                    style: body.copyWith(color: white),
+                  ),
+                  style: ElevatedButton.styleFrom(
+                    padding: EdgeInsets.symmetric(vertical: 11),
+                    primary: primaryColor,
+                    shape: StadiumBorder(),
+                  ),
+                ))
           ],
         ),
       ),
