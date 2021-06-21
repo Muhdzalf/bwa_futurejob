@@ -33,7 +33,7 @@ class DetailScreen extends StatelessWidget {
           ),
           // About The job
           Container(
-              padding: EdgeInsets.symmetric(horizontal: 24, vertical: 30),
+              padding: EdgeInsets.only(left: 24, top: 30),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -56,7 +56,7 @@ class DetailScreen extends StatelessWidget {
                 ],
               )),
           Container(
-              margin: EdgeInsets.symmetric(horizontal: 24, vertical: 30),
+              padding: EdgeInsets.only(left: 24, top: 30),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
