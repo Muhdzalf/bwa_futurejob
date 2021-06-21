@@ -20,9 +20,11 @@ class DetailDescription extends StatelessWidget {
         SizedBox(
           width: 8,
         ),
-        Text(
-          text,
-          style: bodyLight,
+        Expanded(
+          child: Text(
+            text,
+            style: bodyLight,
+          ),
         )
       ],
     );

@@ -31,6 +31,7 @@ class DetailScreen extends StatelessWidget {
               ],
             ),
           ),
+          // About The job
           Container(
               padding: EdgeInsets.symmetric(horizontal: 24, vertical: 30),
               child: Column(
@@ -46,11 +47,38 @@ class DetailScreen extends StatelessWidget {
                   DetailDescription(
                     text: 'Full-Time On Site',
                   ),
+                  SizedBox(
+                    height: 16,
+                  ),
                   DetailDescription(
                     text: 'Start at \$18,000 per month',
                   )
                 ],
-              ))
+              )),
+          Container(
+              margin: EdgeInsets.symmetric(horizontal: 24, vertical: 30),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    'Qualification',
+                    style: body,
+                  ),
+                  SizedBox(
+                    height: 16,
+                  ),
+                  DetailDescription(
+                    text:
+                        'Candidate must possess at least a Bachelor\'s Degree.',
+                  ),
+                  SizedBox(
+                    height: 16,
+                  ),
+                  DetailDescription(
+                    text: 'Start at \$18,000 per month',
+                  )
+                ],
+              )),
         ],
       ),
     );
