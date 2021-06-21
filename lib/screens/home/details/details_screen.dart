@@ -31,11 +31,8 @@ class DetailScreen extends StatelessWidget {
               ],
             ),
           ),
-          SizedBox(
-            height: 32,
-          ),
           Container(
-              padding: EdgeInsets.symmetric(horizontal: 24),
+              padding: EdgeInsets.symmetric(horizontal: 24, vertical: 30),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -43,8 +40,14 @@ class DetailScreen extends StatelessWidget {
                     'About The Job',
                     style: body,
                   ),
+                  SizedBox(
+                    height: 16,
+                  ),
                   DetailDescription(
                     text: 'Full-Time On Site',
+                  ),
+                  DetailDescription(
+                    text: 'Start at \$18,000 per month',
                   )
                 ],
               ))
