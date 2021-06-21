@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../theme.dart';
+import 'components/detail_desc.dart';
 
 class DetailScreen extends StatelessWidget {
   @override
@@ -33,7 +34,20 @@ class DetailScreen extends StatelessWidget {
           SizedBox(
             height: 32,
           ),
-          Container()
+          Container(
+              padding: EdgeInsets.symmetric(horizontal: 24),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    'About The Job',
+                    style: body,
+                  ),
+                  DetailDescription(
+                    text: 'Full-Time On Site',
+                  )
+                ],
+              ))
         ],
       ),
     );
