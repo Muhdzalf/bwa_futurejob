@@ -24,7 +24,7 @@ class DetailScreen extends StatelessWidget {
                   style: h1,
                 ),
                 Text(
-                  'Google inc - Jakarta',
+                  'Google, Inc • Jakarta',
                   style: subtitle,
                 ),
               ],
