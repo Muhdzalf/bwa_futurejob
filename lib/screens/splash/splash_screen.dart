@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:bwa_job/screens/sign_in/welcome_screen.dart';
 import 'package:bwa_job/theme.dart';
 import 'package:flutter/material.dart';
@@ -8,6 +10,16 @@ class SplashScreen extends StatefulWidget {
 }
 
 class _SplashScreenState extends State<SplashScreen> {
+  @override
+  void initState() {
+    super.initState();
+
+    Timer(Duration(milliseconds: 500), () {
+      Navigator.pushReplacement(
+          context, MaterialPageRoute(builder: (context) => WelcomeScreen()));
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
