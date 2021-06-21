@@ -133,7 +133,17 @@ class DetailScreen extends StatelessWidget {
                     primary: primaryColor,
                     shape: StadiumBorder(),
                   ),
-                ))
+                )),
+            Padding(
+              padding: EdgeInsets.only(bottom: 30),
+              child: TextButton(
+                onPressed: () {},
+                child: Text(
+                  'Message Recruiter',
+                  style: bodyLight.copyWith(color: greyText),
+                ),
+              ),
+            )
           ],
         ),
       ),
