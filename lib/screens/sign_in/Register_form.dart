@@ -1,16 +1,36 @@
+import 'package:bwa_job/models/user_model.dart';
+import 'package:bwa_job/providers/auth_provider.dart';
+import 'package:bwa_job/providers/user_provider.dart';
+import 'package:bwa_job/screens/home/home_screen.dart';
 import 'package:bwa_job/screens/sign_in/components/primary_button.dart';
 import 'package:bwa_job/screens/sign_in/components/textfield_label.dart';
 import 'package:bwa_job/screens/sign_in/signin_form.dart';
 import 'package:bwa_job/theme.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class RegisterForm extends StatelessWidget {
-  TextEditingController nameController;
-  TextEditingController emailController;
-  TextEditingController passwordController;
-  TextEditingController goalController;
+  // Textfield Controller
+  TextEditingController nameController = TextEditingController();
+  TextEditingController emailController = TextEditingController();
+  TextEditingController passwordController = TextEditingController();
+  TextEditingController goalController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
+    //Provider
+    var userProvider = Provider.of<UserProvider>(context);
+    var authProvider = Provider.of<AuthProvider>(context);
+
+    void showError() {
+      ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+          backgroundColor: Colors.red,
+          content: Text(
+            'Maaf Error',
+            style: body.copyWith(color: white),
+          )));
+    }
+
     return Scaffold(
       body: SafeArea(
         child: SingleChildScrollView(
@@ -57,15 +77,19 @@ class RegisterForm extends StatelessWidget {
                 children: [
                   TextFieldWithLabel(
                     label: 'Full Name',
+                    jenisController: nameController,
                   ),
                   TextFieldWithLabel(
                     label: 'Email Address',
+                    jenisController: emailController,
                   ),
                   TextFieldWithLabel(
                     label: 'Password',
+                    jenisController: passwordController,
                   ),
                   TextFieldWithLabel(
                     label: 'Your Goal',
+                    jenisController: goalController,
                   ),
                 ],
               ),
@@ -76,7 +100,23 @@ class RegisterForm extends StatelessWidget {
                   padding: EdgeInsets.symmetric(horizontal: 24),
                   child: PrimaryButton(
                     title: 'Register',
-                    function: () {},
+                    function: () async {
+                      UserModel user = await authProvider.register(
+                          emailController.text,
+                          passwordController.text,
+                          nameController.text,
+                          goalController.text);
+                      if (user == null) {
+                        showError();
+                      } else {
+                        userProvider.user = user;
+                        Navigator.pushAndRemoveUntil(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => HomeScreen()),
+                            (route) => false);
+                      }
+                    },
                   )),
               SizedBox(
                 height: 20,
