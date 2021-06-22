@@ -5,6 +5,10 @@ import 'package:bwa_job/theme.dart';
 import 'package:flutter/material.dart';
 
 class RegisterForm extends StatelessWidget {
+  TextEditingController nameController;
+  TextEditingController emailController;
+  TextEditingController passwordController;
+  TextEditingController goalController;
   @override
   Widget build(BuildContext context) {
     return Scaffold(

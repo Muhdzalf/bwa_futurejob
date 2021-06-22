@@ -5,9 +5,11 @@ import '../../../theme.dart';
 
 class TextFieldWithLabel extends StatelessWidget {
   final String label;
+  final TextEditingController jenisController;
   const TextFieldWithLabel({
     Key key,
     this.label,
+    this.jenisController,
   }) : super(key: key);
 
   @override
@@ -24,7 +26,9 @@ class TextFieldWithLabel extends StatelessWidget {
           SizedBox(
             height: 8,
           ),
-          RoundedTextField(),
+          RoundedTextField(
+            jenisController: jenisController,
+          ),
         ],
       ),
     );
