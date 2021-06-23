@@ -21,8 +21,13 @@ class CategoryCard extends StatelessWidget {
         borderRadius: BorderRadius.circular(16),
         child: InkWell(
           onTap: () {
-            Navigator.push(context,
-                MaterialPageRoute(builder: (context) => CategoriesScreen()));
+            Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => CategoriesScreen(
+                          imageurl: image,
+                          title: title,
+                        )));
           },
           child: Container(
             width: 150,

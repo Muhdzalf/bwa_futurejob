@@ -4,6 +4,12 @@ import 'package:flutter/material.dart';
 import '../../../theme.dart';
 
 class CategoriesScreen extends StatelessWidget {
+  final String imageurl;
+  final String title;
+
+  const CategoriesScreen({Key key, this.imageurl, this.title})
+      : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -18,9 +24,7 @@ class CategoriesScreen extends StatelessWidget {
                 width: 150,
                 decoration: BoxDecoration(
                     image: DecorationImage(
-                        image:
-                            AssetImage('assets/images/background/mobile.png'),
-                        fit: BoxFit.cover)),
+                        image: AssetImage(imageurl), fit: BoxFit.cover)),
                 child: Container(
                   decoration: BoxDecoration(
                       gradient: LinearGradient(colors: [
@@ -32,8 +36,7 @@ class CategoriesScreen extends StatelessWidget {
                       Positioned(
                         bottom: 56,
                         left: 24,
-                        child: Text('Mobile Developer',
-                            style: h1.copyWith(color: white)),
+                        child: Text(title, style: h1.copyWith(color: white)),
                       ),
                       Positioned(
                         left: 24,
