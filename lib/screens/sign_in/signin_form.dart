@@ -1,17 +1,32 @@
+import 'package:bwa_job/providers/auth_provider.dart';
+import 'package:bwa_job/providers/user_provider.dart';
 import 'package:bwa_job/screens/home/home_screen.dart';
 import 'package:bwa_job/screens/sign_in/Register_form.dart';
 import 'package:bwa_job/theme.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 import 'components/primary_button.dart';
 import 'components/textfield_label.dart';
 
 class SignInForm extends StatelessWidget {
   @override
-  TextEditingController emailController = TextEditingController();
-  TextEditingController passwordController = TextEditingController();
-
   Widget build(BuildContext context) {
+    TextEditingController emailController = TextEditingController();
+    TextEditingController passwordController = TextEditingController();
+
+    var authProvider = Provider.of<AuthProvider>(context);
+    var userProvider = Provider.of<UserProvider>(context);
+
+    void showError(String message) {
+      ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+          backgroundColor: Colors.red,
+          content: Text(
+            message,
+            style: body.copyWith(color: white),
+          )));
+    }
+
     return Scaffold(
       body: SafeArea(
         child: SingleChildScrollView(
@@ -57,9 +72,16 @@ class SignInForm extends StatelessWidget {
                     const EdgeInsets.symmetric(horizontal: 24, vertical: 20),
                 child: PrimaryButton(
                   title: 'Sign In',
-                  function: () {
-                    Navigator.pushReplacement(context,
-                        MaterialPageRoute(builder: (context) => HomeScreen()));
+                  function: () async {
+                    if (emailController.text.isEmpty ||
+                        passwordController.text.isEmpty) {
+                      showError('periksa kembali email dan password anda');
+                    } else {
+                      Navigator.pushReplacement(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => HomeScreen()));
+                    }
                   },
                 ),
               ),
