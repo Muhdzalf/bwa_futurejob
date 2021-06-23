@@ -23,7 +23,7 @@ class AuthProvider with ChangeNotifier {
       print(response.body);
 
       if (response.statusCode == 200) {
-        UserModel.fromJson(jsonDecode(response.body));
+        return UserModel.fromJson(jsonDecode(response.body));
       } else {
         return null;
       }
