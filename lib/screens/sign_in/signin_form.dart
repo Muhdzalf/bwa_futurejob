@@ -1,3 +1,4 @@
+import 'package:bwa_job/models/user_model.dart';
 import 'package:bwa_job/providers/auth_provider.dart';
 import 'package:bwa_job/providers/user_provider.dart';
 import 'package:bwa_job/screens/home/home_screen.dart';
@@ -77,10 +78,18 @@ class SignInForm extends StatelessWidget {
                         passwordController.text.isEmpty) {
                       showError('periksa kembali email dan password anda');
                     } else {
-                      Navigator.pushReplacement(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => HomeScreen()));
+                      UserModel user = await authProvider.login(
+                          emailController.text, passwordController.text);
+
+                      if (user == null) {
+                        showError('email dan password salah');
+                      } else {
+                        userProvider.user = user;
+                        Navigator.pushReplacement(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => HomeScreen()));
+                      }
                     }
                   },
                 ),
