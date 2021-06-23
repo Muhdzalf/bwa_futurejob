@@ -22,11 +22,11 @@ class RegisterForm extends StatelessWidget {
     var userProvider = Provider.of<UserProvider>(context);
     var authProvider = Provider.of<AuthProvider>(context);
 
-    void showError() {
+    void showError(String message) {
       ScaffoldMessenger.of(context).showSnackBar(SnackBar(
           backgroundColor: Colors.red,
           content: Text(
-            'Maaf Error',
+            message,
             style: body.copyWith(color: white),
           )));
     }
@@ -101,20 +101,27 @@ class RegisterForm extends StatelessWidget {
                   child: PrimaryButton(
                     title: 'Register',
                     function: () async {
-                      UserModel user = await authProvider.register(
-                          emailController.text,
-                          passwordController.text,
-                          nameController.text,
-                          goalController.text);
-                      if (user == null) {
-                        showError();
+                      if (nameController.text.isEmpty ||
+                          emailController.text.isEmpty ||
+                          passwordController.text.isEmpty ||
+                          goalController.text.isEmpty) {
+                        showError('Data Tidak Boleh Kosong');
                       } else {
-                        userProvider.user = user;
-                        Navigator.pushAndRemoveUntil(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => HomeScreen()),
-                            (route) => false);
+                        UserModel user = await authProvider.register(
+                            emailController.text,
+                            passwordController.text,
+                            nameController.text,
+                            goalController.text);
+                        if (user == null) {
+                          showError('Maaf Email sudah Terdaftar');
+                        } else {
+                          userProvider.user = user;
+                          Navigator.pushAndRemoveUntil(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => HomeScreen()),
+                              (route) => false);
+                        }
                       }
                     },
                   )),
