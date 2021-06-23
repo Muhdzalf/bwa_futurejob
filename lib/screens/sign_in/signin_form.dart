@@ -8,6 +8,9 @@ import 'components/textfield_label.dart';
 
 class SignInForm extends StatelessWidget {
   @override
+  TextEditingController emailController = TextEditingController();
+  TextEditingController passwordController = TextEditingController();
+
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
@@ -43,9 +46,11 @@ class SignInForm extends StatelessWidget {
                   )),
               TextFieldWithLabel(
                 label: 'Email Address',
+                jenisController: emailController,
               ),
               TextFieldWithLabel(
                 label: 'Password',
+                jenisController: passwordController,
               ),
               Padding(
                 padding:
