@@ -13,7 +13,7 @@ class UserModel {
     this.goal,
   });
 
-  UserModel.fromJson(Map<dynamic, String> json) {
+  UserModel.fromJson(Map<String, dynamic> json) {
     id = json['id'];
     email = json['email'];
     password = json['password'];
@@ -21,7 +21,7 @@ class UserModel {
     goal = json['goal'];
   }
 
-  Map<dynamic, String> toJson() {
+  Map<String, dynamic> toJson() {
     return {
       'id': id,
       'email': email,
