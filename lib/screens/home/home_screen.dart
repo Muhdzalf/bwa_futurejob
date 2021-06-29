@@ -1,11 +1,15 @@
+import 'package:bwa_job/providers/user_provider.dart';
 import 'package:bwa_job/theme.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'components/category_list.dart';
 import 'components/job_list.dart';
 
 class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    var userProvider = Provider.of<UserProvider>(context);
+
     return Scaffold(
       body: SafeArea(
         child: SingleChildScrollView(
@@ -18,32 +22,39 @@ class HomeScreen extends StatelessWidget {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          'Hello',
-                          style: subtitle,
-                        ),
-                        SizedBox(
-                          height: 2,
-                        ),
-                        Text(
-                          'Dzalfiqri Sabani',
-                          style: h1,
-                        ),
-                      ],
+                    Expanded(
+                      flex: 5,
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            'Hello',
+                            style: subtitle,
+                          ),
+                          SizedBox(
+                            height: 2,
+                          ),
+                          Text(
+                            userProvider.user.name,
+                            maxLines: 1,
+                            overflow: TextOverflow.ellipsis,
+                            style: h1,
+                          ),
+                        ],
+                      ),
                     ),
-                    Container(
-                      padding: EdgeInsets.all(3),
-                      height: 58,
-                      width: 58,
-                      decoration: BoxDecoration(
-                          shape: BoxShape.circle,
-                          border: Border.all(width: 1, color: primaryColor)),
-                      child: CircleAvatar(
-                        backgroundImage:
-                            AssetImage('assets/images/profile.png'),
+                    Expanded(
+                      child: Container(
+                        padding: EdgeInsets.all(3),
+                        height: 58,
+                        width: 58,
+                        decoration: BoxDecoration(
+                            shape: BoxShape.circle,
+                            border: Border.all(width: 1, color: primaryColor)),
+                        child: CircleAvatar(
+                          backgroundImage:
+                              AssetImage('assets/images/profile.png'),
+                        ),
                       ),
                     ),
                   ],
