@@ -1,4 +1,5 @@
 import 'package:bwa_job/providers/auth_provider.dart';
+import 'package:bwa_job/providers/category_provider.dart';
 import 'package:bwa_job/providers/user_provider.dart';
 import 'package:bwa_job/screens/splash/splash_screen.dart';
 import 'package:flutter/material.dart';
@@ -17,6 +18,8 @@ class MyApp extends StatelessWidget {
             create: (context) => UserProvider()),
         ChangeNotifierProvider<AuthProvider>(
             create: (context) => AuthProvider()),
+        ChangeNotifierProvider<CategoryProvider>(
+            create: (context) => CategoryProvider()),
       ],
       child: MaterialApp(
         title: 'Future Job',

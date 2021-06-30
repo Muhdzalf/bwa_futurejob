@@ -24,7 +24,7 @@ class CategoriesScreen extends StatelessWidget {
                 width: 150,
                 decoration: BoxDecoration(
                     image: DecorationImage(
-                        image: AssetImage(imageurl), fit: BoxFit.cover)),
+                        image: NetworkImage(imageurl), fit: BoxFit.cover)),
                 child: Container(
                   decoration: BoxDecoration(
                       gradient: LinearGradient(colors: [

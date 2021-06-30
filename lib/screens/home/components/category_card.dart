@@ -33,7 +33,7 @@ class CategoryCard extends StatelessWidget {
             width: 150,
             decoration: BoxDecoration(
                 image: DecorationImage(
-                    image: AssetImage(image), fit: BoxFit.cover)),
+                    image: NetworkImage(image), fit: BoxFit.cover)),
             child: Container(
               decoration: BoxDecoration(
                   gradient: LinearGradient(colors: [
