@@ -19,7 +19,12 @@ class CompanyJobCard extends StatelessWidget {
     return InkWell(
       onTap: () {
         Navigator.push(
-            context, (MaterialPageRoute(builder: (context) => DetailScreen())));
+            context,
+            (MaterialPageRoute(
+                builder: (context) => DetailScreen(
+                    companyLogo: imageUrl,
+                    companyName: companyName,
+                    job: job))));
       },
       child: Container(
         margin: EdgeInsets.symmetric(horizontal: 24, vertical: 16),
@@ -27,7 +32,7 @@ class CompanyJobCard extends StatelessWidget {
           children: [
             Expanded(
               flex: 1,
-              child: Image.asset(
+              child: Image.network(
                 imageUrl,
               ),
             ),

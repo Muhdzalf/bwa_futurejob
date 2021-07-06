@@ -4,6 +4,12 @@ import '../../../theme.dart';
 import 'components/detail_desc.dart';
 
 class DetailScreen extends StatelessWidget {
+  final String companyLogo;
+  final String companyName;
+  final String job;
+
+  const DetailScreen({Key key, this.companyLogo, this.companyName, this.job})
+      : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -18,16 +24,16 @@ class DetailScreen extends StatelessWidget {
             Container(
               child: Column(
                 children: [
-                  Image.asset(
-                    'assets/images/social_media/google.png',
+                  Image.network(
+                    companyLogo,
                     height: 60,
                   ),
                   Text(
-                    'Front-End Developer',
+                    job,
                     style: h1,
                   ),
                   Text(
-                    'Google, Inc • Jakarta',
+                    '$companyName • Jakarta',
                     style: subtitle,
                   ),
                 ],

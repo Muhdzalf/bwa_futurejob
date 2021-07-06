@@ -1,4 +1,7 @@
+import 'package:bwa_job/models/job_model.dart';
+import 'package:bwa_job/providers/job_provider.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 import 'companyjob_card.dart';
 
@@ -9,25 +12,22 @@ class JobList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        // Company Card
-        CompanyJobCard(
-          companyName: 'Google',
-          job: 'Front-End Developer',
-          imageUrl: 'assets/images/social_media/google.png',
-        ),
-        CompanyJobCard(
-          companyName: 'Facebook',
-          job: 'Data Scientist',
-          imageUrl: 'assets/images/social_media/facebook.png',
-        ),
-        CompanyJobCard(
-          companyName: 'Instagram',
-          job: 'UI Designer',
-          imageUrl: 'assets/images/social_media/instagram.png',
-        ),
-      ],
-    );
+    var jobProvider = Provider.of<JobProvider>(context);
+    return FutureBuilder<List<JobModel>>(
+        future: jobProvider.getJob(),
+        builder: (context, snapshot) {
+          if (snapshot.connectionState == ConnectionState.done) {
+            print(snapshot.data);
+            return Column(
+                children: snapshot.data
+                    .map((job) => CompanyJobCard(
+                          imageUrl: job.companyLogo,
+                          companyName: job.companyName,
+                          job: job.name,
+                        ))
+                    .toList());
+          }
+          return Center(child: CircularProgressIndicator());
+        });
   }
 }
