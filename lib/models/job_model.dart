@@ -1,5 +1,3 @@
-import 'dart:ffi';
-
 class JobModel {
   String id;
   String name;
