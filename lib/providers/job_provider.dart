@@ -27,6 +27,5 @@ class JobProvider with ChangeNotifier {
       print(e);
       return [];
     }
-    ;
   }
 }

@@ -27,7 +27,7 @@ class CompanyJobCard extends StatelessWidget {
           children: [
             Expanded(
               flex: 1,
-              child: Image.asset(
+              child: Image.network(
                 imageUrl,
               ),
             ),
