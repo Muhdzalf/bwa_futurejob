@@ -44,16 +44,12 @@ class DetailScreen extends StatelessWidget {
             Container(
                 padding: EdgeInsets.only(left: 24),
                 child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    DetailDescription(
-                      text: 'Full-Time On Site',
-                    ),
-                    DetailDescription(
-                      text: 'Start at \$18,000 per month',
-                    )
-                  ],
-                )),
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: job.about
+                        .map((text) => DetailDescription(
+                              text: text,
+                            ))
+                        .toList())),
             // Qualification
             DescTitle(
               text: 'Qualification',
@@ -64,20 +60,11 @@ class DetailScreen extends StatelessWidget {
               ),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  DetailDescription(
-                    text:
-                        'Candidate must possess at least a Bachelor\'s Degree.',
-                  ),
-                  DetailDescription(
-                    text:
-                        'Able to use Microsoft Office and Google based service.',
-                  ),
-                  DetailDescription(
-                    text:
-                        'Have an excellent time management, good at organized and details',
-                  ),
-                ],
+                children: job.qualifications
+                    .map((text) => DetailDescription(
+                          text: text,
+                        ))
+                    .toList(),
               ),
             ),
 
@@ -86,21 +73,14 @@ class DetailScreen extends StatelessWidget {
               text: 'Responsibilities',
             ),
             Container(
-              padding: EdgeInsets.only(left: 24),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  DetailDescription(
-                    text:
-                        'Initiate and promote any programs, events, training, or activities.',
-                  ),
-                  DetailDescription(
-                    text:
-                        'Assessing and anticipating needs and collaborate with Division..',
-                  ),
-                ],
-              ),
-            ),
+                padding: EdgeInsets.only(left: 24),
+                child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: job.responsibilities
+                        .map((text) => DetailDescription(
+                              text: text,
+                            ))
+                        .toList())),
             Padding(
                 padding:
                     const EdgeInsets.symmetric(vertical: 30, horizontal: 80),
