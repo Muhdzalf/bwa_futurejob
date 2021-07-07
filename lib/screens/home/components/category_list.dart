@@ -28,8 +28,7 @@ class _CategoryListState extends State<CategoryList> {
                 scrollDirection: Axis.horizontal,
                 children: snapshot.data
                     .map((category) => CategoryCard(
-                          image: category.imageUrl,
-                          title: category.name,
+                          category: category,
                         ))
                     .toList(),
               );

@@ -1,16 +1,15 @@
+import 'package:bwa_job/models/category_model.dart';
 import 'package:bwa_job/screens/home/categories/categories._screen.dart';
 import 'package:flutter/material.dart';
 
 import '../../../theme.dart';
 
 class CategoryCard extends StatelessWidget {
-  final String title;
-  final String image;
+  final CategoryModel category;
 
   const CategoryCard({
     Key key,
-    this.title,
-    this.image,
+    this.category,
   }) : super(key: key);
 
   @override
@@ -25,15 +24,14 @@ class CategoryCard extends StatelessWidget {
                 context,
                 MaterialPageRoute(
                     builder: (context) => CategoriesScreen(
-                          imageurl: image,
-                          title: title,
+                          category: category,
                         )));
           },
           child: Container(
             width: 150,
             decoration: BoxDecoration(
                 image: DecorationImage(
-                    image: NetworkImage(image), fit: BoxFit.cover)),
+                    image: NetworkImage(category.imageUrl), fit: BoxFit.cover)),
             child: Container(
               decoration: BoxDecoration(
                   gradient: LinearGradient(colors: [
@@ -45,7 +43,7 @@ class CategoryCard extends StatelessWidget {
                 child: Align(
                   alignment: Alignment.bottomLeft,
                   child: Text(
-                    title,
+                    category.name,
                     style: body.copyWith(color: white, fontSize: 18),
                   ),
                 ),
