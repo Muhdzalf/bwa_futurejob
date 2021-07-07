@@ -1,15 +1,13 @@
+import 'package:bwa_job/models/job_model.dart';
 import 'package:flutter/material.dart';
 
 import '../../../theme.dart';
 import 'components/detail_desc.dart';
 
 class DetailScreen extends StatelessWidget {
-  final String companyLogo;
-  final String companyName;
-  final String job;
+  final JobModel job;
 
-  const DetailScreen({Key key, this.companyLogo, this.companyName, this.job})
-      : super(key: key);
+  const DetailScreen({Key key, this.job}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -25,15 +23,15 @@ class DetailScreen extends StatelessWidget {
               child: Column(
                 children: [
                   Image.network(
-                    companyLogo,
+                    job.companyLogo,
                     height: 60,
                   ),
                   Text(
-                    job,
+                    job.name,
                     style: h1,
                   ),
                   Text(
-                    '$companyName • Jakarta',
+                    '${job.companyName} • ${job.location}',
                     style: subtitle,
                   ),
                 ],

@@ -1,30 +1,22 @@
+import 'package:bwa_job/models/job_model.dart';
 import 'package:bwa_job/screens/home/details/details_screen.dart';
 import 'package:flutter/material.dart';
 
 import '../../../theme.dart';
 
 class CompanyJobCard extends StatelessWidget {
-  final String imageUrl;
-  final String job;
-  final String companyName;
+  final JobModel job;
   const CompanyJobCard({
     Key key,
-    this.imageUrl,
     this.job,
-    this.companyName,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
-        Navigator.push(
-            context,
-            (MaterialPageRoute(
-                builder: (context) => DetailScreen(
-                    companyLogo: imageUrl,
-                    companyName: companyName,
-                    job: job))));
+        Navigator.push(context,
+            (MaterialPageRoute(builder: (context) => DetailScreen(job: job))));
       },
       child: Container(
         margin: EdgeInsets.symmetric(horizontal: 24, vertical: 16),
@@ -32,9 +24,7 @@ class CompanyJobCard extends StatelessWidget {
           children: [
             Expanded(
               flex: 1,
-              child: Image.network(
-                imageUrl,
-              ),
+              child: Image.network(job.companyLogo),
             ),
             SizedBox(
               width: 27,
@@ -49,11 +39,11 @@ class CompanyJobCard extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      job,
+                      job.name,
                       style: body.copyWith(fontSize: 18),
                     ),
                     Text(
-                      companyName,
+                      job.companyName,
                       style: subtitleLight,
                     ),
                     SizedBox(height: 18)
