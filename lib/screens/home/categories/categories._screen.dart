@@ -1,14 +1,14 @@
+import 'package:bwa_job/models/category_model.dart';
+import 'package:bwa_job/screens/home/components/bigcompany_list.dart';
 import 'package:bwa_job/screens/home/components/job_list.dart';
 import 'package:flutter/material.dart';
 
 import '../../../theme.dart';
 
 class CategoriesScreen extends StatelessWidget {
-  final String imageurl;
-  final String title;
+  final CategoryModel category;
 
-  const CategoriesScreen({Key key, this.imageurl, this.title})
-      : super(key: key);
+  const CategoriesScreen({Key key, this.category}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +24,8 @@ class CategoriesScreen extends StatelessWidget {
                 width: 150,
                 decoration: BoxDecoration(
                     image: DecorationImage(
-                        image: NetworkImage(imageurl), fit: BoxFit.cover)),
+                        image: NetworkImage(category.imageUrl),
+                        fit: BoxFit.cover)),
                 child: Container(
                   decoration: BoxDecoration(
                       gradient: LinearGradient(colors: [
@@ -36,7 +37,8 @@ class CategoriesScreen extends StatelessWidget {
                       Positioned(
                         bottom: 56,
                         left: 24,
-                        child: Text(title, style: h1.copyWith(color: white)),
+                        child: Text(category.name,
+                            style: h1.copyWith(color: white)),
                       ),
                       Positioned(
                         left: 24,
@@ -66,7 +68,9 @@ class CategoriesScreen extends StatelessWidget {
                         style: body.copyWith(fontSize: 16),
                       ),
                     ),
-                    JobList(),
+                    BigCompanyJobList(
+                      name: category.name,
+                    ),
                     Padding(
                       padding:
                           const EdgeInsets.only(left: 24, bottom: 16, top: 30),
