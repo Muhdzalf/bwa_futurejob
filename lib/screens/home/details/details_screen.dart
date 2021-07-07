@@ -37,24 +37,17 @@ class DetailScreen extends StatelessWidget {
                 ],
               ),
             ),
+            DescTitle(
+              text: 'About The Job',
+            ),
             // About The job
             Container(
-                padding: EdgeInsets.only(left: 24, top: 30),
+                padding: EdgeInsets.only(left: 24),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(
-                      'About The Job',
-                      style: body,
-                    ),
-                    SizedBox(
-                      height: 16,
-                    ),
                     DetailDescription(
                       text: 'Full-Time On Site',
-                    ),
-                    SizedBox(
-                      height: 16,
                     ),
                     DetailDescription(
                       text: 'Start at \$18,000 per month',
@@ -62,31 +55,23 @@ class DetailScreen extends StatelessWidget {
                   ],
                 )),
             // Qualification
+            DescTitle(
+              text: 'Qualification',
+            ),
             Container(
-              padding: EdgeInsets.only(left: 24, top: 30),
+              padding: EdgeInsets.only(
+                left: 24,
+              ),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(
-                    'Qualification',
-                    style: body,
-                  ),
-                  SizedBox(
-                    height: 16,
-                  ),
                   DetailDescription(
                     text:
                         'Candidate must possess at least a Bachelor\'s Degree.',
                   ),
-                  SizedBox(
-                    height: 16,
-                  ),
                   DetailDescription(
                     text:
                         'Able to use Microsoft Office and Google based service.',
-                  ),
-                  SizedBox(
-                    height: 16,
                   ),
                   DetailDescription(
                     text:
@@ -97,24 +82,17 @@ class DetailScreen extends StatelessWidget {
             ),
 
             // Responsibilities
+            DescTitle(
+              text: 'Responsibilities',
+            ),
             Container(
-              padding: EdgeInsets.only(left: 24, top: 30),
+              padding: EdgeInsets.only(left: 24),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(
-                    'Respondsibilities',
-                    style: body,
-                  ),
-                  SizedBox(
-                    height: 16,
-                  ),
                   DetailDescription(
                     text:
                         'Initiate and promote any programs, events, training, or activities.',
-                  ),
-                  SizedBox(
-                    height: 16,
                   ),
                   DetailDescription(
                     text:
@@ -150,6 +128,25 @@ class DetailScreen extends StatelessWidget {
             )
           ],
         ),
+      ),
+    );
+  }
+}
+
+class DescTitle extends StatelessWidget {
+  final String text;
+  const DescTitle({
+    Key key,
+    this.text,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: EdgeInsets.symmetric(horizontal: 24, vertical: 16),
+      child: Text(
+        text,
+        style: body,
       ),
     );
   }
