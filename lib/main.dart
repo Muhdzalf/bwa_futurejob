@@ -1,3 +1,4 @@
+import 'package:bwa_job/providers/apply_provider.dart';
 import 'package:bwa_job/providers/auth_provider.dart';
 import 'package:bwa_job/providers/category_provider.dart';
 import 'package:bwa_job/providers/job_provider.dart';
@@ -21,6 +22,8 @@ class MyApp extends StatelessWidget {
             create: (context) => AuthProvider()),
         ChangeNotifierProvider<CategoryProvider>(
             create: (context) => CategoryProvider()),
+        ChangeNotifierProvider<ApplyProvider>(
+            create: (context) => ApplyProvider()),
         ChangeNotifierProvider<JobProvider>(create: (context) => JobProvider()),
       ],
       child: MaterialApp(
