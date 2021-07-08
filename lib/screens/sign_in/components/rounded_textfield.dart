@@ -3,16 +3,19 @@ import 'package:flutter/material.dart';
 import '../../../theme.dart';
 
 class RoundedTextField extends StatelessWidget {
+  final bool obscureText;
   final TextEditingController jenisController;
   const RoundedTextField({
     Key key,
     this.jenisController,
+    this.obscureText,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return TextField(
       controller: jenisController,
+      obscureText: obscureText,
       style: body.copyWith(color: primaryColor),
       decoration: InputDecoration(
           filled: true,
