@@ -5,11 +5,13 @@ import '../../../theme.dart';
 
 class TextFieldWithLabel extends StatelessWidget {
   final String label;
+  final bool obscureText;
   final TextEditingController jenisController;
   const TextFieldWithLabel({
     Key key,
     this.label,
     this.jenisController,
+    this.obscureText,
   }) : super(key: key);
 
   @override
@@ -28,6 +30,7 @@ class TextFieldWithLabel extends StatelessWidget {
           ),
           RoundedTextField(
             jenisController: jenisController,
+            obscureText: obscureText,
           ),
         ],
       ),

@@ -11,22 +11,25 @@ class DetailDescription extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      children: [
-        Image.asset(
-          'assets/images/icons/dot.png',
-          height: 12,
-        ),
-        SizedBox(
-          width: 8,
-        ),
-        Expanded(
-          child: Text(
-            text,
-            style: bodyLight,
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 16),
+      child: Row(
+        children: [
+          Image.asset(
+            'assets/images/icons/dot.png',
+            height: 12,
           ),
-        )
-      ],
+          SizedBox(
+            width: 8,
+          ),
+          Expanded(
+            child: Text(
+              text,
+              style: bodyLight,
+            ),
+          )
+        ],
+      ),
     );
   }
 }

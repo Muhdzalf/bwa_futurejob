@@ -78,18 +78,22 @@ class RegisterForm extends StatelessWidget {
                   TextFieldWithLabel(
                     label: 'Full Name',
                     jenisController: nameController,
+                    obscureText: false,
                   ),
                   TextFieldWithLabel(
                     label: 'Email Address',
                     jenisController: emailController,
+                    obscureText: false,
                   ),
                   TextFieldWithLabel(
                     label: 'Password',
                     jenisController: passwordController,
+                    obscureText: true,
                   ),
                   TextFieldWithLabel(
                     label: 'Your Goal',
                     jenisController: goalController,
+                    obscureText: false,
                   ),
                 ],
               ),

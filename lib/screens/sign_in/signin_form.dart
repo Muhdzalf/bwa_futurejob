@@ -63,10 +63,12 @@ class SignInForm extends StatelessWidget {
               TextFieldWithLabel(
                 label: 'Email Address',
                 jenisController: emailController,
+                obscureText: false,
               ),
               TextFieldWithLabel(
                 label: 'Password',
                 jenisController: passwordController,
+                obscureText: true,
               ),
               Padding(
                 padding:

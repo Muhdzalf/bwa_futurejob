@@ -21,9 +21,7 @@ class JobList extends StatelessWidget {
             return Column(
                 children: snapshot.data
                     .map((job) => CompanyJobCard(
-                          imageUrl: job.companyLogo,
-                          companyName: job.companyName,
-                          job: job.name,
+                          job: job,
                         ))
                     .toList());
           }
